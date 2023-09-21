@@ -12,7 +12,7 @@ let preguntaOjos = prompt("¿El color de sus ojos son: negros o azules?")
             alert("Usted a elegido a Isabella Hadid!")
         } else {
             let preguntaPelo = prompt("¿Su color de cabello es rubio o castaño?")
-        if (preguntaPelo == "rubio") {
+        if (preguntaPelo == "Rubio") {
             alert("Usted ha elegido a Jelena Hadid!")
         } else { 
             alert("Usted ha elegido a Kendal Jenner!")
