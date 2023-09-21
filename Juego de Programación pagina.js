@@ -1,34 +1,36 @@
-const words = ["promocionar", "cursar","aprobar","final","parcial"];
-const word = words[Math.floor(Math.random()*words.length)];
-let hiddenWord="-".repeat(words.lenght);
+const words = ["aprobar", "promocionar", "cursar", "rendir"];
+const word = words[Math.floor(Math.random() * words.length)];
+let hiddenWord = "_".repeat(word.length);
 let tries = 6;
 
+while (tries > 0 && hiddenWord.includes("_")) {
+  console.log("Palabra: " + hiddenWord);
+  console.log("Le quedan: " + tries + " intentos");
 
-while (tries > 0 && hiddenWord.includes("-")) {
-let letter = prompt ("Ingrese una letra: ");
-
-        console.log("Palabra: "+hiddenWord+".");
-        console.log("Le quedan: "+tries+" intentos.");
-if (!/^[a-zA-Z]+$/.test(letter)) { // desde la a minuscula hasta la Z mayuscula, lo demas NOP
-console.log(letter+" no es una letra, por favor vuelta a intentar: ");
-}
-else if (word.includes(letter)) {
-        for (let i = 0;i < word.length; i++){
-            if(word[i]=== letter) 
-          hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1); 
-        }
+  const letter = prompt("Ingrese una letra: ");
+  if (!/^[a-zA-Z]+$/.test(letter)) { // desde la a miniscula hasta la Z mayuscula, sino es un simbolo y se toma como falso
+    console.log(letter + " no es una letra, por favor ingrese una: ");
+  }
+  
+  else if (word.includes(letter)) { // mas facil un includes que el indexOf 
+    for (let i = 0; i < word.length; i++) {
+      if (word[i] === letter) {
+        hiddenWord = hiddenWord.substring(0, i) + letter + hiddenWord.substring(i + 1); 
       }
-        //Deberia avisar y sustituir, DEBERIA!!
-        } 
-    } else { 
-        intentos --1
-        console.log("No se encuentra esa letra: "+ letter + ", se le resta un intento, le quedan: " + intentos)
     }
+  }
+  
+  else {
+    console.log ("Ha ingresado la letra: " + letter + ", la cual no se encuentra en la palabra")
+    tries--;
+  }
 }
-if (adivinar === palabra) {
-    console.log("Felicitaciones, ha ganado, la palabra era: "+palabra+ "!");
+
+
+if (hiddenWord === word) {
+  console.log("Felicitaciones, la palabra era: " + word + "!");
 } else {
-    console.log ("Lo siento, perdió. La palabra era: " + palabra + ".");
+  console.log("Lo siento, ha perdido, la palabra era: " + word+".");
 }
 
 
