@@ -1,3 +1,4 @@
+console.log ("Usted debera adivinar entre modelos internacionales, tales como Kendall Jenner, Sora CHoi, Gigi Hadid, Bella Hadid e Irina Shayk");
 let preguntaInicial = prompt("¿Su modelo es mayor de 30 años?")
 if (preguntaInicial == "Si") {
 let preguntaOjos = prompt("¿El color de sus ojos son: negros o azules?")
