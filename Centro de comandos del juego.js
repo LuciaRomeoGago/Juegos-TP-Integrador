@@ -4,15 +4,20 @@ const menu = [
     "3. Jugar al adivina quien, presione 3",
     "4. Salir del menú"
   ];
-
+  
+  
+let preguntarSiQuiereSeguir = true;
+do {
+  // Mostrar las opciones del menú en la consola
   console.log("Menú de juegos:");
   for (let i = 0; i < menu.length; i++) {
     console.log(menu[i]);
   }
   
-
+  // Esperar la entrada del usuario
   const opcion = prompt("Ingrese el número de la opción que desea ejecutar:");
-
+  
+  // Ejecutar la opción seleccionada por el usuario
   switch (opcion) {
     case "1":
       console.log("Ejecutando el juego 1...");
@@ -97,6 +102,18 @@ let preguntaOjos = prompt("¿El color de sus ojos son: negros o azules?")
     case "4":
       console.log("Saliendo del menú...");
       break;
+    default:
+      console.log("Opción inválida.");
+      break;
+  }
+  if (preguntarSiQuiereSeguir) {
+    const respuesta = prompt ("¿Desea jugar otro juego?");
+    if (respuesta !== "Si") {
+      preguntarSiQuiereSeguir = false;
+    }
+  } 
+} while (preguntarSiQuiereSeguir);
+
     default:
       console.log("Opción inválida.");
       break;
