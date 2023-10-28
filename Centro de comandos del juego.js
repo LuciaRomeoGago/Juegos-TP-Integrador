@@ -3,26 +3,25 @@ const menu = [
     "2. Jugar al adivina el número, presione 2",
     "3. Jugar al adivina quien, presione 3",
     "4. Salir del menú"
-  ];
+  ]; // es un arrayyyyyyyyyyyyy
   
   
-let preguntarSiQuiereSeguir = true;
-do {
-  // Mostrar las opciones del menú en la consola
-  console.log("Menú de juegos:");
-  for (let i = 0; i < menu.length; i++) {
+let finalQuestion = true; //una flag? Esto es verdadero asique hace esto pero cuando deje de ser verdadero hace otra cosa. 
+do { //hace esto miennnnntras
+  
+  console.log("Menú de juegos:");// Muestra las opciones del menú por consola
+  for (let i = 0; i < menu.length; i++) { // un for para que recorra el array
     console.log(menu[i]);
   }
   
-  // Esperar la entrada del usuario
   const opcion = prompt("Ingrese el número de la opción que desea ejecutar:");
   
-  // Ejecutar la opción seleccionada por el usuario
-  switch (opcion) {
-    case "1":
+  // Ejecuta la opción seleccionada por el sujeto jeje
+  switch (opcion) { // a lo que esta dentro de los parentesis se llama expresion 
+    case "1": // declaracion ejecutada cuando el resultado de expresion coincide con el valor. En este caso "1"
       console.log("Ejecutando el juego 1...");
       const words = ["aprobar", "promocionar", "cursar", "rendir"];
-const word = words[Math.floor(Math.random() * words.length)];
+const word = words[Math.floor(Math.random() * words.length)]; 
 let hiddenWord = "_".repeat(word.length);
 let tries = 6;
 
@@ -56,8 +55,8 @@ if (hiddenWord === word) {
   console.log("Lo siento, ha perdido, la palabra era: " + word+".");
 }
 
-      break;
-    case "2":
+      break; //hasta aca
+    case "2": // se compara con la expresionnnnnnnnnn
       console.log("Ejecutando el juego 2...");
       const number = Math.floor(Math.random() * 10)+1;
 let attempts = 0;
@@ -73,8 +72,8 @@ while(number !== guess) {
     console.log("El número por adivinar es menor al introducido: " + guess + "!")
 }}
     console.log("Ha adivinado el número "+number+" en "+attempts+" intentos, felicitaciones!")
-      break;
-    case "3":
+      break; //finish
+    case "3": // nuevamente se compara a ver que onda
       console.log("Ejecutando el juego 3...");
       console.log ("Usted debera adivinar entre modelos internacionales, tales como Kendall Jenner, Sora CHoi, Gigi Hadid, Bella Hadid e Irina Shayk. Por favor respete la mayúscula al comienzo de la palabra");
 let preguntaInicial = prompt("¿Su modelo es mayor de 30 años?")
@@ -98,23 +97,21 @@ let preguntaOjos = prompt("¿El color de sus ojos son: negros o azules?")
         } }
     }  
         
-      break;
-    case "4":
+      break; //interrumpe
+    case "4": //comparada con la expresion.
       console.log("Saliendo del menú...");
-      break;
-    default:
+      break; //interrumpe, hasta aca. 
+    default: // cuando ninguno de los valores coincide con el valor de la expresion, por ej."9". 
       console.log("Opción inválida.");
       break;
   }
-  if (preguntarSiQuiereSeguir) {
-    const respuesta = prompt ("¿Desea jugar otro juego?");
-    if (respuesta !== "Si") {
-      preguntarSiQuiereSeguir = false;
+  if (finalQuestion) { // para que repita la pregunta x si quiere volver a jugar, esta medio pachucho
+    const answer = prompt ("¿Desea jugar otro juego?");
+    if (answer !== "Si") {
+      finalQuestion = false;
     }
   } 
-} while (preguntarSiQuiereSeguir);
+} while (finalQuestion);
 
-    default:
-      console.log("Opción inválida.");
       break;
   }
